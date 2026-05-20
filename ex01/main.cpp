@@ -6,7 +6,7 @@
 /*   By: edi-maio <edi-maio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 09:41:16 by edi-maio          #+#    #+#             */
-/*   Updated: 2026/05/08 10:05:10 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/05/20 21:40:36 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int main()
     std::cout << topSecret << "\n" << lowLevel << "\n";
 
     Form copyForm = lowLevel;
-    copyForm.beSigned(alice);
+    try { copyForm.beSigned(alice); }
+    catch (std::exception& e) { std::cerr << e.what() << "\n"; }
     std::cout << copyForm << "\n";
 
     Bureaucrat copyBob("CopyBob", 100);
