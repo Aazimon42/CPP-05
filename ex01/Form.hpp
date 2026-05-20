@@ -6,7 +6,7 @@
 /*   By: edi-maio <edi-maio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 09:47:00 by edi-maio          #+#    #+#             */
-/*   Updated: 2026/05/08 10:02:55 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/05/20 21:34:21 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ class Form
         {
             public:
                 virtual const char* what() const throw() { return "Grade is too low!"; }
+        };
+        class AlreadySignedException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw() { return "Form is already signed!"; }
         };
     private:
         const std::string name;

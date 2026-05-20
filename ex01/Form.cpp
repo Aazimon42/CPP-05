@@ -6,7 +6,7 @@
 /*   By: edi-maio <edi-maio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 09:54:16 by edi-maio          #+#    #+#             */
-/*   Updated: 2026/05/08 10:18:14 by edi-maio         ###   ########.fr       */
+/*   Updated: 2026/05/20 21:36:43 by edi-maio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 {
     if (bureaucrat.getGrade() > signGrade)
         throw Form::GradeTooLowException();
+    if (isSigned)
+        throw Form::AlreadySignedException();
     isSigned = true;
 }
 
